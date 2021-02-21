@@ -292,7 +292,7 @@ class CacheController(object):
         if "no-store" in cc_req:
             no_store = True
             logger.debug('Request header has "no-store"')
-        if no_store and self.cache.get(cache_url):
+        if no_store:
             logger.debug('Purging existing cache entry to honor "no-store"')
             self.cache.delete(cache_url)
         if no_store:
